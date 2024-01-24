@@ -15,9 +15,10 @@ while True:
     a. Register User.     1. Add Book.
     b. Remove User.       2. Search Book.
     c. User Details.      3. Update Book.       
-    e. Exit.              4. remove Book.
-                          5. Allot Book.
-                          6. Returned Book.
+    d. Display all Users. 4. remove Book.
+    e. Exit.              5. Display All Books.
+                          6. Allot Book.
+                          7. Returned Book.
                           
     ''')
 
@@ -39,6 +40,10 @@ while True:
             Id = int_valid()
             print(lib_sys.user_details(Id))
 
+        elif option == 'd':
+            print(lib_sys.display_all_users())
+
+
         elif option == "e":
             print("Successfully Exited.")
             break
@@ -59,14 +64,17 @@ while True:
         elif int(option) == 4:
             isbn = input("ISBN: ")
             print(lib_sys.remove_book(isbn))
-
+        
         elif int(option) == 5:
+            print(lib_sys.avaliable_books())
+
+        elif int(option) == 6:
             user_id = int_valid()
             isbn = isbn = input("ISBN: ")
             no_of_books = int_valid("No.of books: ")
             print(trans.allot_book(lib_sys, user_id, isbn, no_of_books))
 
-        elif int(option) == 6:
+        elif int(option) == 7:
             user_id = int_valid()
             isbn = input("ISBN: ")
             no_of_books = int_valid("No.of books: ")
